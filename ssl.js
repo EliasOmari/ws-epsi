@@ -23,6 +23,7 @@ async function main() {
   console.log(new Date(validFrom));
   console.log(new Date(expiryDate));
 
+  // On affiche l'autorité ayant établi le certificat
   console.log(securityDetails.issuer());
 }
 main();
