@@ -23,8 +23,11 @@ async function main() {
   // Pour récupérer le nom du premier cookie
   console.log(data.cookies[0].name);
 
+  // Pour récupérer tous les noms des cookies
   data.cookies.forEach((cookie) => {
-      console.log("nom : ", cookie.secure);
+      console.log("nom : ", cookie.name);
   })
+
+  // Et après on fait la même chose pour le reste...
 }
 main();
