@@ -12,14 +12,13 @@ const server = http.createServer((request, response) => {
             if (error) {
                 response.writeHead(404)
                 response.end()
-            }
-            else {
+            } else {
                 response.writeHead(200, {"Content-Type": "text/html"})
                 response.write(data, "utf8")
                 response.end()
             }
         })
-    else if (request.method == 'POST') {
+    } else if (request.method == 'POST') {
         var body = ''
 
         request.on('data', (data) => {
