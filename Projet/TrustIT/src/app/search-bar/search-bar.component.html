@@ -2,8 +2,14 @@
   <form action="/recherche/" method="POST">
     <fieldset>
       <div class="input-group">
-        <input id="oSaisie" name="oSaisie" type="url" class="form-control" aria-label="Saisie d'url'" placeholder="https://.." required="required">
-        <button class="btn btn-outline-light btn-lg btn-block">Recherche</button>
+
+          <select id="options" name="options" class="custom-select bg-primary text-light">
+            <option selected="selected" value="0">Select Type</option>
+            <option value="1">Cookies</option>
+            <option value="2">Certificats</option>
+          </select>
+        <input id="url" name="url" type="url" class="form-control" aria-label="Saisie d'url'" placeholder="https://.." required="required">
+        <button class="btn btn-outline-light btn-lg btn-block">Analyze</button>
       </div>
     </fieldset>
   </form>
