@@ -4,12 +4,19 @@ export class Cookie {
   expire = 0;
   secure = false;
   httpOnly = false;
-  colorCarte = 0;
   isExpire = false;
+  colorCarte = '';
 
-  public warningCookie(): boolean{
+
+  public warningCookie(): void{
     if (this.isExpire) {
-      this.colorCarte = 1
+      this.colorCarte = 'red';
+    } else {
+      if (!this.secure) {
+        this.colorCarte = 'orange';
+      } else {
+        this.colorCarte = 'white';
+      }
     }
   }
 
