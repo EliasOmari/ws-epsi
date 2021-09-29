@@ -1,0 +1,22 @@
+g<div class="row" style="text-align: center">
+  <div class="col text-center" >
+    <h1 style="text-align: center"> {{pizza.nom}}</h1>
+    <div class="row" style="display: block; margin: auto">
+      <img [src]="pizza.image">
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      Base: {{pizza.base}} Pate: {{pizza.pate}} Ingrédients: {{getIngredients(pizza)}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      Prix : {{pizza.prix | currency: 'EUR'}}
+    </div>
+    <div class="row-cols-3" >
+      <span class="container" style="display: block; margin: auto">
+      <input [disabled]="disabled" (click)="onClick()" type="button" id="commander" class="btn btn-outline-warning btn-block" value="Commander" style="display: block; margin: auto">
+      </span>
+    </div>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+      <p style="color: white">Commande en Cours.. </p>
+    </ngx-spinner>
+  </div>
+</div>

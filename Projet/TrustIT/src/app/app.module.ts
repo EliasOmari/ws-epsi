@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CookieComponent } from './cookie/cookie.component';
+import { CertificatComponent } from './certificat/certificat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     HeaderComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CookieComponent,
+    CertificatComponent
   ],
   imports: [
     BrowserModule,
