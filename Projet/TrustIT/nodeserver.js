@@ -36,7 +36,7 @@ const server = http.createServer((request, response) => {
         })
 
         request.on('end', () => {
-            var post = querystring.parse(body)
+            var post = JSON.parse(body)
             var url = post.url
             var options = post.options
 
