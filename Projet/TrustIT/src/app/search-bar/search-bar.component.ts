@@ -12,7 +12,13 @@ export class SearchBarComponent implements OnInit {
   constructor(private router: Router) { }
   ngOnInit(): void {
   }
-  url = '';
+  public url = '';
+  public value = 0;
+  options = [
+    { id: 1, name: "Cookies" },
+    { id: 2, name: "Certificats" }
+  ];
+  selectedOption = this.options[0].name;
   validURL(string: string) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
@@ -22,11 +28,22 @@ export class SearchBarComponent implements OnInit {
       '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
     return !!pattern.test(string);
   }
-
   onClick() {
+    this.onValue();
     console.log(this.url);
-      this.router.navigate(['/liste-cookie']);
+    console.log(this.selectedOption);
+    console.log(this.value);
+    this.router.navigate(['/liste-cookie']);
   }
-
+  onValue(){
+    if (this.selectedOption=== 'Cookies'){
+      this.value=1;
+    } else {
+      this.value=2;
+    }
+  }
+  selectOpt(event: Event) {
+    this.selectedOption = ((event.target as HTMLSelectElement).value);
+  }
 
 }
