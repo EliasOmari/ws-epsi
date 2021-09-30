@@ -38,6 +38,7 @@ const server = http.createServer((request, response) => {
         request.on('end', () => {
             var post = querystring.parse(body)
             var url = post.url
+            var options = post.options
 
             async function puppet() {
                 const browser = await puppeteer.launch({
@@ -55,29 +56,35 @@ const server = http.createServer((request, response) => {
 
                 const page = await browser.newPage()
                 const responsepage = await page.goto(url)
-                const securityDetails = responsepage.securityDetails()
 
-                var certificatValide = false
-                var certificatExiste = false
-                var data_ssl = []
+                if (options == 2) {
+                    const securityDetails = responsepage.securityDetails()
 
-                if (securityDetails != null) {
-                    certificatExiste = true
-                    data_ssl.securityDetails = securityDetails;
-                    data_ssl.securityDetails.expires < Math.round(new Date().getTime() / 1000)
-                    ? (certificatValide = false)
-                    : (certificatValide = true)
+                    var certificatValide = false
+                    var certificatExiste = false
+                    var data_ssl = []
+
+                    if (securityDetails != null) {
+                        certificatExiste = true
+                        data_ssl.securityDetails = securityDetails;
+                        certificatValide = data_ssl.securityDetails.expires < Math.round(new Date().getTime() / 1000)
+                        ? false : true
+                    }
+
+                    data_ssl.certificatValide = certificatValide
+                    data_ssl.certificatExiste = certificatExiste
+
+                    var arrayToString = JSON.stringify(Object.assign({}, data_ssl))
+                } else if (options == 1) {
+                    var data = await page._client.send("Network.getAllCookies")
+
+                    data.cookies.forEach(cookie => {
+                        cookie.cookieExpired = cookie.expires < Math.round(new Date().getTime() / 1000)
+                        ? true : false
+                    })
+
+                    var arrayToString = JSON.stringify(Object.assign({}, data.cookies))
                 }
-
-                data_ssl.certificatValide = certificatValide
-                data_ssl.certificatExiste = certificatExiste
-
-                var arrayToString = JSON.stringify(Object.assign({}, data_ssl)) // convert array to string
-                // var stringToJsonObject = JSON.parse(arrayToString) // convert string to json object
-
-                // Exemple pour afficher en front un truc du tableau data_ssl
-                // console.log("---");
-                // console.log("Autorité du certificat : ", data_ssl.securityDetails._issuer)
 
                 response.writeHead(200, {"Content-Type": "application/json"})
                 response.write(arrayToString, "utf8")
