@@ -9,6 +9,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CookieComponent } from './cookie/cookie.component';
 import { CertificatComponent } from './certificat/certificat.component';
 import {FormsModule} from "@angular/forms";
+import { APIServiceComponent } from './apiservice/apiservice.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
     HeaderComponent,
     SearchBarComponent,
     CookieComponent,
-    CertificatComponent
+    CertificatComponent,
+    APIServiceComponent
   ],
     imports: [
         BrowserModule,

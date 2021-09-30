@@ -5,8 +5,9 @@ export class Cookie {
   secure = false;
   httpOnly = false;
   isExpire = false;
-  colorCarte = '';
-
+  colorCarte = 'red';
+constructor() {
+}
 
   public warningCookie(): void{
     if (this.isExpire) {
