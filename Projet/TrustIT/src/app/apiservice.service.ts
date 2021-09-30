@@ -11,7 +11,7 @@ export class APIServiceService {
 
   get(): Observable<any> {
     //this.addLogWarn('Demande de Récuperation de la recheche').subscribe();
-    return this.httpClient.get('http://localhost:3000/recherche/');
+    return this.httpClient.get('127.0.0.1:3000/recherche/');
   }
 
 }
