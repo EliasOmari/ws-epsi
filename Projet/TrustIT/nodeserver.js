@@ -84,7 +84,7 @@ const server = http.createServer((request, response) => {
                         ? true : false
                     })
 
-                    var arrayToString = JSON.stringify(Object.assign({}, data.cookies))
+                    var arrayToString = JSON.stringify(Object.assign({}, data))
                 }
 
                 response.writeHead(200, {"Content-Type": "application/json"})
