@@ -8,8 +8,9 @@ export class TransfereService {
   constructor() { }
   private data1: any;
   private data2: any;
+  private color: any;
 
-  setData(data: any){
+  setColor(data: any){
     this.data1 = data;
   }
 
@@ -28,11 +29,19 @@ export class TransfereService {
     this.clearData2();
     return temp;
   }
+  getColor(){
+    let temp = this.color;
+    this.clearColor();
+    return temp;
+  }
 
   clearData(){
     this.data1 = undefined;
   }
   clearData2(){
     this.data2 = undefined;
+  }
+  clearColor(){
+    this.color = undefined;
   }
 }

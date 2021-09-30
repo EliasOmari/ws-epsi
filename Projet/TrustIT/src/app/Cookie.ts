@@ -9,17 +9,17 @@ export class Cookie {
 constructor() {
 }
 
-  public warningCookie(): void{
-    if (this.isExpire) {
-      this.colorCarte = 'red';
-    } else {
-      if (!this.secure) {
-        this.colorCarte = 'orange';
-      } else {
-        this.colorCarte = 'white';
-      }
-    }
-  }
+  // public warningCookie(): void{
+  //   if (this.isExpire) {
+  //     this.colorCarte = 'red';
+  //   } else {
+  //     if (!this.secure) {
+  //       this.colorCarte = 'orange';
+  //     } else {
+  //       this.colorCarte = 'green';
+  //     }
+  //   }
+  // }
 
 
 }

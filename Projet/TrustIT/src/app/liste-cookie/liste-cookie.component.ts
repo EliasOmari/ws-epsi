@@ -14,8 +14,8 @@ export class ListeCookieComponent implements OnInit {
   constructor(private api: APIServiceService,private transfereService: TransfereService) { }
   url= this.transfereService.getData();
   value=this.transfereService.getData2();
+  color= this.transfereService.getColor();
   ngOnInit(): void {
-
     this.api.get(this.url,this.value).subscribe(
     succes => this.onAppelReussi(succes),
       error => this.onAppelEchec(error)
