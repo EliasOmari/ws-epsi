@@ -10,11 +10,8 @@ export class APIServiceService {
   constructor(private httpClient: HttpClient) { }
 
   get(): Observable<any> {
-    this.addLogWarn('Demande de Récuperation de la recheche').subscribe();
-    return this.httpClient.get('http://localhost:3000/recherche');
+    //this.addLogWarn('Demande de Récuperation de la recheche').subscribe();
+    return this.httpClient.get('http://localhost:3000/recherche/');
   }
 
-  addLogWarn(message: string): Observable<any> {
-    return this.httpClient.get('http://localhost:8000/logger/warn?message='+message);
-  }
 }

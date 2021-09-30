@@ -9,7 +9,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CookieComponent } from './cookie/cookie.component';
 import { CertificatComponent } from './certificat/certificat.component';
 import {FormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 import {APIServiceService} from "./apiservice.service";
+import { ListeCookieComponent } from './liste-cookie/liste-cookie.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import {APIServiceService} from "./apiservice.service";
     HeaderComponent,
     SearchBarComponent,
     CookieComponent,
-    CertificatComponent
+    CertificatComponent,
+    ListeCookieComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

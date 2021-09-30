@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {APIServiceService} from "../apiservice.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search-bar',
@@ -8,7 +9,7 @@ import {APIServiceService} from "../apiservice.service";
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private api: APIServiceService) { }
+  constructor(private router: Router) { }
   ngOnInit(): void {
   }
   url = '';
@@ -24,7 +25,7 @@ export class SearchBarComponent implements OnInit {
 
   onClick() {
     console.log(this.url);
-    this.api.get().subscribe();
+      this.router.navigate(['/liste-cookie']);
   }
 
 

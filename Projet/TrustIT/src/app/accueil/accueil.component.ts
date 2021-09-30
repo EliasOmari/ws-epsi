@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Cookie} from "../Cookie";
 import {APIServiceService} from "../apiservice.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-accueil',
@@ -9,10 +10,10 @@ import {APIServiceService} from "../apiservice.service";
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  public cookies = [new Cookie()];
+
 }
