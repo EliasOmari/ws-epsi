@@ -12,7 +12,7 @@ export class ListeCookieComponent implements OnInit {
   constructor(private api: APIServiceService) { }
 
   ngOnInit(): void {
-    this.api.get().subscribe(
+    this.api.get('https://bibliofolie.com/peut-on-utiliser-wordpress-sans-hebergeur/',1).subscribe(
     succes => this.onAppelReussi(succes),
       error => this.onAppelEchec(error)
     );

@@ -9,9 +9,15 @@ export class APIServiceService {
 
   constructor(private httpClient: HttpClient) { }
 
-  get(): Observable<any> {
+  get2(url: string,option: number): Observable<any> {
     //this.addLogWarn('Demande de Récuperation de la recheche').subscribe();
-    return this.httpClient.get('127.0.0.1:3000/recherche/');
+    return this.httpClient.get('https://localhost:3000/recherche/');
   }
+
+  get(url: string,option: number): Observable<any> {
+    //this.addLogWarn('Demande de Récuperation de la recheche').subscribe();
+    return this.httpClient.post('https://localhost:3000/recherche/',{option,url},);
+  }
+
 
 }
