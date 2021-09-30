@@ -15,8 +15,7 @@ export class APIServiceService {
   }
 
   get(url: string,options: number): Observable<any> {
-    //this.addLogWarn('Demande de Récuperation de la recheche').subscribe();
-    return this.httpClient.post('/recherche/',{options,url});
+    return this.httpClient.post('/recherche/',{ options: options, url: url });
   }
 
 
