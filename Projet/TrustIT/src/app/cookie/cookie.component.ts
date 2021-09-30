@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Cookie} from "../cookie";
+import {Component, Input, OnInit} from '@angular/core';
+import {Cookie} from "../Cookie";
 
 @Component({
   selector: 'app-cookie',
@@ -12,7 +12,10 @@ export class CookieComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  @Input()
   cookie = new Cookie();
+
+
 
 
 

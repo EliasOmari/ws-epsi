@@ -11,7 +11,7 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  url = '';
   validURL(string: string) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
@@ -22,4 +22,7 @@ export class SearchBarComponent implements OnInit {
     return !!pattern.test(string);
   }
 
+  onClick() {
+    console.log(this.url);
+  }
 }
