@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {APIServiceService} from "../apiservice.service";
 
 @Component({
   selector: 'app-search-bar',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private api: APIServiceService) { }
   ngOnInit(): void {
   }
   url = '';
@@ -24,5 +24,8 @@ export class SearchBarComponent implements OnInit {
 
   onClick() {
     console.log(this.url);
+    this.api.get().subscribe();
   }
+
+
 }

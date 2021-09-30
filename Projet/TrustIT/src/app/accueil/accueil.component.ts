@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Cookie} from "../Cookie";
+import {APIServiceService} from "../apiservice.service";
 
 @Component({
   selector: 'app-accueil',
