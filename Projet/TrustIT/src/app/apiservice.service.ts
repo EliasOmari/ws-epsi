@@ -15,6 +15,8 @@ export class APIServiceService {
   }
 
   get(url: string,options: number): Observable<any> {
+    var a = { options: options, url: url};
+    console.log(a);
     return this.httpClient.post('/recherche/',{ options: options, url: url });
   }
 
