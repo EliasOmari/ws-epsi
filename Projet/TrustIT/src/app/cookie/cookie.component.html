@@ -1,0 +1,20 @@
+<div class="row" style="text-align: center" [ngStyle]="{backgroundColor: cookie.warningCookie()}">
+  <div class="col text-center" >
+    <h1 style="text-align: center">{{cookie.name}}</h1>
+    <div class="row" style="display: block; margin: auto">
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+       Expiration {{cookie.expire}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+       Appartient à : {{cookie.domain}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      norme httpOnly : {{cookie.httpOnly}}
+    </div>
+
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+      <p style="color: white">Analyse en Cours.. </p>
+    </ngx-spinner>
+  </div>
+</div>

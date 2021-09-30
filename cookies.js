@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-const URL = "https://serverfault.com/";
+const URL = "https://www.beecome.io/"; // À lier avec le form
 async function main() {
   const browser = await puppeteer.launch({
     ignoreDefaultArgs: ["--disable-extensions"],
@@ -20,14 +20,13 @@ async function main() {
 
   var data = await page._client.send("Network.getAllCookies");
 
-  // Pour récupérer le nom du premier cookie
-  console.log(data.cookies[0].name);
-
-  // Pour récupérer tous les noms des cookies
-  data.cookies.forEach((cookie) => {
-      console.log("nom : ", cookie.name);
-  })
-
-  // Et après on fait la même chose pour le reste...
+  data.cookies.forEach(cookie => {
+    if (cookie.expires < Math.round(new Date().getTime() / 1000)) {
+      cookie.cookieExpired = true;
+    } else {
+      cookie.cookieExpired = false;
+    }
+  });
+  console.log(data);
 }
 main();
