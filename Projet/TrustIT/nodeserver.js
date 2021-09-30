@@ -55,6 +55,7 @@ const server = http.createServer((request, response) => {
                 })
 
                 const page = await browser.newPage()
+                await page.setDefaultNavigationTimeout(0)
                 const responsepage = await page.goto(url)
 
                 if (options == 2) {
