@@ -8,10 +8,21 @@ import {APIServiceService} from "../apiservice.service";
   styleUrls: ['./liste-cookie.component.css']
 })
 export class ListeCookieComponent implements OnInit {
-
+  public cookies = [new Cookie()];
   constructor(private api: APIServiceService) { }
 
   ngOnInit(): void {
+    this.api.get().subscribe(
+    succes => this.onAppelReussi(succes),
+      error => this.onAppelEchec(error)
+    );
   }
-  public cookies = [new Cookie()];
+  private onAppelReussi(succes: any) {
+    this.cookies = succes;
+  }
+
+  private onAppelEchec(error: any) {
+    this.cookies = error;
+  }
+
 }
