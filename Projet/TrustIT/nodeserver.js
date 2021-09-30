@@ -1,7 +1,6 @@
 const fs = require('fs')
 const http = require('http')
 const puppeteer = require("puppeteer")
-const querystring = require('querystring')
 const url = require('url')
 
 const hostname = '127.0.0.1'
