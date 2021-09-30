@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Cookie} from "../Cookie";
 import {APIServiceService} from "../apiservice.service";
+import {SearchBarComponent} from "../search-bar/search-bar.component";
+import {TransfereService} from "../transfere.service";
 
 @Component({
   selector: 'app-liste-cookie',
@@ -9,10 +11,12 @@ import {APIServiceService} from "../apiservice.service";
 })
 export class ListeCookieComponent implements OnInit {
   public cookies = [new Cookie()];
-  constructor(private api: APIServiceService) { }
-
+  constructor(private api: APIServiceService,private transfereService: TransfereService) { }
+  url= this.transfereService.getData();
+  value=this.transfereService.getData2();
   ngOnInit(): void {
-    this.api.get('https://www.salut.fr',1).subscribe(
+
+    this.api.get(this.url,this.value).subscribe(
     succes => this.onAppelReussi(succes),
       error => this.onAppelEchec(error)
     );

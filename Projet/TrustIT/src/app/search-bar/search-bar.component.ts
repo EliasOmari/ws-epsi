@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {APIServiceService} from "../apiservice.service";
 import {Router} from "@angular/router";
+import {TransfereService} from "../transfere.service";
 
 @Component({
   selector: 'app-search-bar',
@@ -9,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private transfereService: TransfereService) { }
   ngOnInit(): void {
   }
   public url = '';
@@ -33,6 +34,7 @@ export class SearchBarComponent implements OnInit {
     console.log(this.url);
     console.log(this.selectedOption);
     console.log(this.value);
+    this.transfereService.setData2(this.url,this.value);
     this.router.navigate(['/liste-cookie']);
   }
   onValue(){
