@@ -1,12 +1,13 @@
 import {formatDate} from "@angular/common";
 
 export class Certificat {
-  subjectName = '';
+  _issuer = '';
+  _subjectName='';
   certificatExiste= false;
   certificatValide= false;
-  protocol='';
-  validFrom= '';
-  validTo= '';
+  _protocol='';
+  _validFrom= 0;
+  _validTo=  0;
 
   constructor() {
   }

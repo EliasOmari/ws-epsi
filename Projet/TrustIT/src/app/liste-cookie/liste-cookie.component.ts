@@ -10,6 +10,7 @@ import {TransfereService} from "../transfere.service";
   styleUrls: ['./liste-cookie.component.css']
 })
 export class ListeCookieComponent implements OnInit {
+  len=0;
   public cookies = [new Cookie()];
   constructor(private api: APIServiceService,private transfereService: TransfereService) { }
   url= this.transfereService.getData();
@@ -22,7 +23,10 @@ export class ListeCookieComponent implements OnInit {
     );
   }
   private onAppelReussi(succes: any) {
-    this.cookies = succes;
+    this.len= succes.length;
+    console.log(this.len);
+    this.cookies = succes.cookies;
+    console.log(this.cookies.length)
     console.log(this.cookies);
   }
 

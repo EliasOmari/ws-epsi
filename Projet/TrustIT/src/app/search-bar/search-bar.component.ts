@@ -35,7 +35,11 @@ export class SearchBarComponent implements OnInit {
     console.log(this.selectedOption);
     console.log(this.value);
     this.transfereService.setData2(this.url,this.value);
-    this.router.navigate(['/liste-cookie']);
+    if(this.value==1) {
+      this.router.navigate(['/liste-cookie']);
+    }else{
+      this.router.navigate(['/certificat']);
+    }
   }
   onValue(){
     if (this.selectedOption=== 'Cookies'){

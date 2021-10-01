@@ -6,8 +6,9 @@ import {CertificatComponent} from "./certificat/certificat.component";
 
 const routes: Routes = [
   {path: 'liste-cookie', component: ListeCookieComponent},
-  {path: '',component:AccueilComponent}
- // {path:'/certificat', component: CertificatComponent}
+  {path:'certificat', component: CertificatComponent},
+  {path: '',component:AccueilComponent},
+
 ];
 
 @NgModule({
