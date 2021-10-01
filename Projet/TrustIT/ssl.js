@@ -35,8 +35,8 @@ async function main() {
   data_ssl.certificatValide = certificatValide;
   data_ssl.certificatExiste = certificatExiste;
 
-  /* var arrayToString = JSON.stringify(Object.assign({}, data_ssl)); // convert array to string
-  var stringToJsonObject = JSON.parse(arrayToString); // convert string to json object */
+  var arrayToString = JSON.stringify(Object.assign({}, data_ssl)); // convert array to string
+  var stringToJsonObject = JSON.parse(arrayToString); // convert string to json object
 
   console.log(stringToJsonObject);
   console.log(typeof stringToJsonObject);

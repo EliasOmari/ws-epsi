@@ -23,6 +23,7 @@ export class ListeCookieComponent implements OnInit {
   }
   private onAppelReussi(succes: any) {
     this.cookies = succes;
+    console.log(this.cookies);
   }
 
   private onAppelEchec(error: any) {
