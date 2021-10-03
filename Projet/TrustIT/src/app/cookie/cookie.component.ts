@@ -18,10 +18,10 @@ export class CookieComponent implements OnInit {
   isSecure():string {
     let affichage;
     if (this.cookie.httpOnly) {
-      affichage = 'Ce site utilise vos données sensible et est bien protégé';
+      affichage = 'Ce cookie utilise vos données sensible et est bien protégé';
 
     } else {
-      affichage = 'Ce site ne garde pas de données sensible ou ne les protège pas...';
+      affichage = 'Ce cookie ne garde pas de données sensible ou ne les protège pas...';
     }
     return affichage;
   }

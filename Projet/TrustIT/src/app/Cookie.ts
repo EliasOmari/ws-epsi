@@ -1,7 +1,7 @@
 export class Cookie {
   name = '';
   domain = '';
-  expire = 0;
+  expires = 0;
   secure = false;
   httpOnly = false;
   isExpire = false;
@@ -17,7 +17,6 @@ constructor() {
   //       this.colorCarte = 'orange';
   //     } else {
   //       this.colorCarte = 'green';
-  //     }
   //   }
   // }
 
