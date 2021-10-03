@@ -1,0 +1,16 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.linear-gradient {
+  background: linear-gradient(black,dimgrey,grey,darkgray,ghostwhite,white);
+}
+
+div {
+  width: auto;
+  height: 600px;
+}
+
+
+.custom-select {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

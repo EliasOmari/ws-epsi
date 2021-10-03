@@ -1,0 +1,27 @@
+<div class="row" style="text-align: center" >
+  <div class="col text-center" >
+    <h1 style="text-align: center ">{{certificat._subjectName}}</h1>
+    <div class="row" style="display: block; margin: auto">
+      Autorité de certification : {{certificat._issuer}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      Date du début: {{changeDate(certificat._validFrom)}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      Date de fin: {{changeDate(certificat._validTo)}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      {{whenExpired()}}
+    </div>
+    <div class="row" style="display: block; margin: auto" >
+      Protocol: {{certificat._protocol}}
+    </div>
+<!--    <div class="row" style="display: block; margin: auto" >-->
+<!--      norme httpOnly : {{isSecure()}}-->
+<!--    </div>-->
+
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+      <p style="color: white">Analyse de certificat en Cours.. </p>
+    </ngx-spinner>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="recherche">
+  <form action="/recherche/" method="POST">
+    <fieldset>
+      <div class="input-group">
+
+          <select id="options" name="options" class="form-select" style="width: 50px" matNativeControl (change)="selectOpt($event)">
+<!--            <option selected="selected" value="0">Select Type</option>-->
+            <option *ngFor="let option of options"
+                    [ngValue]="option.id"
+                    [selected]="selectedOption === option.name"
+            >{{option.name}}</option>
+          </select>
+        <input id="url" name="url" type="url" class="form-control" aria-label="Saisie d'url'" placeholder="https://.." required="required" [(ngModel)]="url">
+        <button (click)="onClick()" class="btn btn-outline-light btn-lg btn-block">Analyze</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
