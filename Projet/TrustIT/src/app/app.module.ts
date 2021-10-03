@@ -11,7 +11,9 @@ import { CertificatComponent } from './certificat/certificat.component';
 import {FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import {APIServiceService} from "./apiservice.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListeCookieComponent } from './liste-cookie/liste-cookie.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import { ListeCookieComponent } from './liste-cookie/liste-cookie.component';
   ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]

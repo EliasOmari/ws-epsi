@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Certificat} from "../Certificat";
 import {APIServiceService} from "../apiservice.service";
 import {TransfereService} from "../transfere.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-certificat',
@@ -13,11 +14,14 @@ export class CertificatComponent implements OnInit {
   certificat=new Certificat();
   color='';
   len=0;
-  constructor(private api: APIServiceService, private transfereService: TransfereService) { }
+  constructor(private api: APIServiceService,
+              private transfereService: TransfereService,
+              private SpinnerService: NgxSpinnerService) { }
 
   url= this.transfereService.getData();
   value=this.transfereService.getData2();
   ngOnInit(): void {
+    this.SpinnerService.show();
     if(this.certificat.certificatExiste){
       this.color='green';
     }else{
@@ -34,12 +38,14 @@ export class CertificatComponent implements OnInit {
   }
 
   private onAppelReussi(succes: any) {
+    this.SpinnerService.hide();
     this.len= succes.length;
     console.log(this.len);
     this.certificat = succes.securityDetails;
   }
 
   private onAppelEchec(error: any) {
+    this.SpinnerService.hide();
     this.certificat = error;
   }
   whenExpired(): string {
